@@ -3,7 +3,7 @@
 
 ** GG ** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **19u89uuih** hours spent in total
 
 ## User Stories
 
