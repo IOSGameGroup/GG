@@ -13,23 +13,25 @@ class GamesApiManager {
     
     static let baseUrl = "https://api-2445582011268.apicast.io/games/"
     static let apiKey = "338399f39ef086984919b17e11171de4"
-    var session: URLSession
-    
-    init() {
-        session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-    }
     
     func nowPlayingGames(completion: @escaping ([Games]?, Error?) -> ()) {
+        
+        
+        
         let url = URL(string: GamesApiManager.baseUrl)!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let config = URLSessionConfiguration.default
+        config.httpAdditionalHeaders = ["user-key" : "338399f39ef086984919b17e11171de4" , "Accept" : "application/json" ]
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        request.httpMethod = "GET"
         let task = session.dataTask(with: request) { (data, response, error) in
             // This will run when the network request returns
             if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let gamesDictionaries = dataDictionary["Game"] as! [[String: Any]]
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+                print(dataDictionary)
                 
-                let games = Games.games(dictionaries: gamesDictionaries)
-                completion(games, nil)
+                //let games = Games.games(dictionaries: gamesDictionaries)
+                completion(nil, nil)
             } else {
                 completion(nil, error)
             }

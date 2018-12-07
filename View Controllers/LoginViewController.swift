@@ -27,7 +27,6 @@ class LoginViewController: UIViewController {
         
         // set the new users properties:
         newUser.username = usernameTextField.text
-        //newUser.email = emailField.text
         newUser.password = passwordTextField.text
         
         //calls the sign up function on the object
@@ -61,7 +60,6 @@ class LoginViewController: UIViewController {
                 print("User logged in successfully")
                 
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                
             }
         }
     }

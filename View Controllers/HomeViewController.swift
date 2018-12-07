@@ -30,10 +30,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         //needed to create cells
         tableView.dataSource = self
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 200
         tableView.estimatedRowHeight = 50
         
-        fetchGames()
+        //fetchGames()
         
     }
     
@@ -61,14 +61,23 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return games.count
+           return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
-        cell.game = games [indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) //as! GameCell
+        //cell.game = games [indexPath.row]
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let index = tableView.indexPath(for: cell){
+            performSegue(withIdentifier: "detailedSegue", sender: nil)
+            //let detailViewController = segue.destination as! DetailedViewController
+            //detailViewController.games = games[index.row]
+        }
     }
     
 }
