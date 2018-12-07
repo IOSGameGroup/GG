@@ -52,7 +52,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Full autolayout constraint have not been applied yet. App must run in iphone 8 to version where everything fits. 
 
 ## License
 
