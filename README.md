@@ -3,15 +3,15 @@
 
 ** GG ** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up and create an account
-- [ ] User can log in and log out of his or her account
-- [ ] User can see a home view of games with a small description of the game, along with the title and release date of it
+- [x] User can sign up and create an account
+- [x] User can log in and log out of his or her account
+- [x] User can see a home view of games with a small description of the game, along with the title and release date of it
 - [ ] User can enter a detailed view, here a detailed description of the game will be displayed
 - [ ] User can enter a future game release view
 - [ ] User can save games to his account, where he can view them later
