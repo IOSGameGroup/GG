@@ -20,13 +20,13 @@ class GamesApiManager {
     }
     
     func nowPlayingGames(completion: @escaping ([Games]?, Error?) -> ()) {
-        let url = URL(string: GamesApiManager.baseUrl + "72161")!
+        let url = URL(string: GamesApiManager.baseUrl)!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let task = session.dataTask(with: request) { (data, response, error) in
             // This will run when the network request returns
             if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let gamesDictionaries = dataDictionary["results"] as! [[String: Any]]
+                let gamesDictionaries = dataDictionary["Game"] as! [[String: Any]]
                 
                 let games = Games.games(dictionaries: gamesDictionaries)
                 completion(games, nil)

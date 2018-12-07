@@ -32,15 +32,26 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
+        
+        fetchGames()
+        
     }
     
     
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
-        // todo: fetch games
+        fetchGames()
     }
 
-  
+    func fetchGames(){
+        GamesApiManager().nowPlayingGames { (games: [Games]?, error: Error?) in
+            if let games = games {
+                self.games = games
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }
+    }
     
     
     @IBAction func onProfile(_ sender: Any) {
@@ -55,7 +66,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
-        //cell.movie = games [indexPath.row]
+        cell.game = games [indexPath.row]
         
         return cell
     }
