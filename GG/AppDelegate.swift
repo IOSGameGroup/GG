@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
             
         )
-        /* persist logged in
+         /*persist logged in
         if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeViewController = storyboard.instantiateViewController(withIdentifier: "TabViewController")

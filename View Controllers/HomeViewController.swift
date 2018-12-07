@@ -71,13 +71,4 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        if let index = tableView.indexPath(for: cell){
-            performSegue(withIdentifier: "detailedSegue", sender: nil)
-            //let detailViewController = segue.destination as! DetailedViewController
-            //detailViewController.games = games[index.row]
-        }
-    }
-    
 }

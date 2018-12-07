@@ -118,15 +118,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Felipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXI-2h-fDh">
-                                <rect key="frame" x="147" y="80" width="50" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXI-2h-fDh">
+                                <rect key="frame" x="147" y="80" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="De La Torre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZC-Q4-RV0">
-                                <rect key="frame" x="147" y="102" width="93" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZC-Q4-RV0">
+                                <rect key="frame" x="147" y="102" width="45" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -269,7 +269,7 @@
                                             <outlet property="overViewLabel" destination="eP2-J2-uKa" id="guQ-5K-sdI"/>
                                             <outlet property="posterImageView" destination="N5C-BI-6f7" id="N6X-P2-EJG"/>
                                             <outlet property="titleLabel" destination="LbE-BK-1mY" id="u7p-zw-Uzs"/>
-                                            <segue destination="R9Q-mv-DXQ" kind="presentation" identifier="detailedSegue" trigger="accessoryAction" id="yke-0v-PZa"/>
+                                            <segue destination="R9Q-mv-DXQ" kind="show" identifier="detailedSegue" id="nm4-8i-nYi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -396,7 +396,6 @@ Having trouble choosing a stage? Then select the Stage Morph option to transform
         <image name="Switch_SuperSmashBrosUltimate_illustration_02" width="1400" height="1400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yke-0v-PZa"/>
-        <segue reference="QtY-Dz-88s"/>
+        <segue reference="UHr-FB-0Dy"/>
     </inferredMetricsTieBreakers>
 </document>

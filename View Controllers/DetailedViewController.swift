@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailedViewController: UITableViewController {
+    
+    var game: Games?
 
     override func viewDidLoad() {
         super.viewDidLoad()
