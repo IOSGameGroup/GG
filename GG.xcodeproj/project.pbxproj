@@ -10,6 +10,9 @@
 		5F85BB8ADDA687261E3F9B35 /* Pods_GGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81823005F0324E2343331A6 /* Pods_GGTests.framework */; };
 		7045DF63CB6349F1FF13A96C /* Pods_GGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63569454E7EDECAD1055696 /* Pods_GGUITests.framework */; };
 		A25C38956FF0C83D2E2D635F /* Pods_GG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C42F3CA8E716DB0BA344814 /* Pods_GG.framework */; };
+		C792E66121B9D4BE00FF5D6A /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792E66021B9D4BE00FF5D6A /* GameCell.swift */; };
+		C792E66321B9D96100FF5D6A /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792E66221B9D96100FF5D6A /* Games.swift */; };
+		C792E66621B9DA2200FF5D6A /* GameApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792E66521B9DA2200FF5D6A /* GameApiManager.swift */; };
 		C7AE057C21966C9C001D7456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE057B21966C9C001D7456 /* AppDelegate.swift */; };
 		C7AE058121966C9C001D7456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AE057F21966C9C001D7456 /* Main.storyboard */; };
 		C7AE058321966C9D001D7456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AE058221966C9D001D7456 /* Assets.xcassets */; };
@@ -46,6 +49,9 @@
 		2245D6B4356CCEBE7577A711 /* Pods-GGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGUITests/Pods-GGUITests.release.xcconfig"; sourceTree = "<group>"; };
 		869244634FC4ECD42B656EBB /* Pods-GG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG.release.xcconfig"; path = "Pods/Target Support Files/Pods-GG/Pods-GG.release.xcconfig"; sourceTree = "<group>"; };
 		9DCE6BA5EDCF9DB85F61D0BA /* Pods-GG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GG/Pods-GG.debug.xcconfig"; sourceTree = "<group>"; };
+		C792E66021B9D4BE00FF5D6A /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		C792E66221B9D96100FF5D6A /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		C792E66521B9DA2200FF5D6A /* GameApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameApiManager.swift; sourceTree = "<group>"; };
 		C7AE057821966C9C001D7456 /* GG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AE057B21966C9C001D7456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7AE058021966C9C001D7456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,9 +126,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C792E66421B9D97800FF5D6A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE05A92196730C001D7456 /* LoginViewController.swift */,
+				C7AE05AC21967369001D7456 /* HomeViewController.swift */,
+				C7AE05AE2196738E001D7456 /* DetailedViewController.swift */,
+				C7AE05B0219673BB001D7456 /* ProfileViewController.swift */,
+				C7AE05B2219673D5001D7456 /* FutureViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		C7AE056F21966C9B001D7456 = {
 			isa = PBXGroup;
 			children = (
+				C792E66421B9D97800FF5D6A /* View Controllers */,
 				C7AE05AB21967326001D7456 /* Views */,
 				C7AE057A21966C9C001D7456 /* GG */,
 				C7AE058F21966C9D001D7456 /* GGTests */,
@@ -176,11 +195,9 @@
 		C7AE05AB21967326001D7456 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C7AE05A92196730C001D7456 /* LoginViewController.swift */,
-				C7AE05AC21967369001D7456 /* HomeViewController.swift */,
-				C7AE05AE2196738E001D7456 /* DetailedViewController.swift */,
-				C7AE05B0219673BB001D7456 /* ProfileViewController.swift */,
-				C7AE05B2219673D5001D7456 /* FutureViewController.swift */,
+				C792E66221B9D96100FF5D6A /* Games.swift */,
+				C792E66521B9DA2200FF5D6A /* GameApiManager.swift */,
+				C792E66021B9D4BE00FF5D6A /* GameCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -419,6 +436,9 @@
 			files = (
 				C7AE05AA2196730C001D7456 /* LoginViewController.swift in Sources */,
 				C7AE05B3219673D5001D7456 /* FutureViewController.swift in Sources */,
+				C792E66621B9DA2200FF5D6A /* GameApiManager.swift in Sources */,
+				C792E66121B9D4BE00FF5D6A /* GameCell.swift in Sources */,
+				C792E66321B9D96100FF5D6A /* Games.swift in Sources */,
 				C7AE057C21966C9C001D7456 /* AppDelegate.swift in Sources */,
 				C7AE05B1219673BB001D7456 /* ProfileViewController.swift in Sources */,
 				C7AE05AF2196738E001D7456 /* DetailedViewController.swift in Sources */,

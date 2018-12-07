@@ -1,0 +1,63 @@
+//
+//  HomeViewController.swift
+//  GG
+//
+//  Created by Felipe De La Torre on 11/9/18.
+//  Copyright © 2018 Felipe De La Torre. All rights reserved.
+//
+
+import UIKit
+import AlamofireImage
+
+class HomeViewController: UIViewController, UITableViewDataSource {
+    
+
+    @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl!
+    var games: [Games] = []
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        
+        // needed for pull to refresh
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        
+        //needed to create cells
+        tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 50
+    }
+    
+    
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        // todo: fetch games
+    }
+
+  
+    
+    
+    @IBAction func onProfile(_ sender: Any) {
+        performSegue(withIdentifier: "profileSegue", sender: nil)
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
+        //cell.movie = games [indexPath.row]
+        
+        return cell
+    }
+    
+}
