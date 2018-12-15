@@ -1,7 +1,7 @@
 # GG
 # Group Project - *GG*
 
-** GG ** is a photo sharing app using Parse as its backend.
+** GG ** is a Game Industry app, which shows the user upcoming titles, and allows user log in functions using Parse as its backend.
 
 Time spent: **15** hours spent in total
 
